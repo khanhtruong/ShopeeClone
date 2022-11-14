@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShopeeClone</string>
+    <string name="lbl_search_hint">Đăng ký và nhận voucher bạn mới đến 70k!</string>
+    <string name="lbl_shopeepay">ShopeePay</string>
+    <string name="lbl_shopee_xu_promotion">Đăng ký ngay hôm nay để nhận Shopee xu</string>
+    <string name="lbl_shopee_xu">Shopee Xu</string>
+    
+    <string name="fmt_item_sold">Đã bán %1$s</string>
+    <string name="fmt_item_price">%1$s%2$s</string>
+</resources>

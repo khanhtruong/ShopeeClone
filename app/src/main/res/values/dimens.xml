@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Elevation-->
+    <dimen name="disable_elevation">0dp</dimen>
+
+
+    <!--    Size-->
+    <dimen name="feature_banner_height">250dp</dimen>
+    <dimen name="image_tool_size">40dp</dimen>
+    <dimen name="image_tool_stroke_width">1dp</dimen>
+
+
+    <!--    Radius-->
+    <dimen name="medium_radius">8dp</dimen>
+
+
+    <!--    Margin - vertical-->
+    <dimen name="small_margin_vertical">4dp</dimen>
+    <dimen name="medium_margin_vertical">8dp</dimen>
+    <!--    Margin - horizontal-->
+    <dimen name="small_margin_horizontal">8dp</dimen>
+    <dimen name="m_small_margin_horizontal">12dp</dimen>
+    <dimen name="medium_margin_horizontal">16dp</dimen>
+</resources>

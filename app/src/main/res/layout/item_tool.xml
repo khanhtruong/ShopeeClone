@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="@dimen/small_margin_vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout_first_tool"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/medium_radius">
+
+                <ImageView
+                    android:layout_width="@dimen/image_tool_size"
+                    android:layout_height="@dimen/image_tool_size"
+                    android:layout_gravity="center"
+                    android:src="@android:color/holo_orange_light" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Widget.ShopeeClone.TextView.SmallContent.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Gì cũng Rẻ-Mua Là Freeship" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_second_tool"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/linearLayout_first_tool"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/medium_radius">
+
+                <ImageView
+                    android:layout_width="@dimen/image_tool_size"
+                    android:layout_height="@dimen/image_tool_size"
+                    android:src="@android:color/holo_blue_light" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Widget.ShopeeClone.TextView.SmallContent.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Mã Giảm Giá" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_third_tool"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/linearLayout_second_tool"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/medium_radius">
+
+                <ImageView
+                    android:layout_width="@dimen/image_tool_size"
+                    android:layout_height="@dimen/image_tool_size"
+                    android:layout_gravity="center"
+                    android:src="@android:color/holo_green_light" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Widget.ShopeeClone.TextView.SmallContent.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Miễn Phí Vận Chuyển" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_fourth_tool"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/linearLayout_third_tool"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/medium_radius">
+
+                <ImageView
+                    android:layout_width="@dimen/image_tool_size"
+                    android:layout_height="@dimen/image_tool_size"
+                    android:layout_gravity="center"
+                    android:src="@android:color/holo_red_light" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Widget.ShopeeClone.TextView.SmallContent.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="ShopeeFood - Giao Thực Phẩm" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_more_tool"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/linearLayout_fourth_tool"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/medium_radius">
+
+                <ImageView
+                    android:layout_width="@dimen/image_tool_size"
+                    android:layout_height="@dimen/image_tool_size"
+                    android:layout_gravity="center"
+                    android:src="@android:color/holo_purple" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Widget.ShopeeClone.TextView.SmallContent.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Xem Thêm" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
