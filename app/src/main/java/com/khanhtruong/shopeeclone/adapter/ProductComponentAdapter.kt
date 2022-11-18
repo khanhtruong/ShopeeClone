@@ -2,25 +2,26 @@ package com.khanhtruong.shopeeclone.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.khanhtruong.shopeeclone.data.model.ProductData
 import com.khanhtruong.shopeeclone.databinding.ComponentProductBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
-class ProductComponentAdapter(
-    private val adapter: ProductAdapter
-) : RecyclerView.Adapter<ProductComponentAdapter.ProductComponentViewHolder>() {
+class ProductHeaderAdapter(
+    override val concatAdapterIndex: Int,
+    private val totalSpanSize: Int,
+) : RecyclerView.Adapter<ProductHeaderAdapter.ProductHeaderViewHolder>(), ConcatenableAdapter {
 
-    inner class ProductComponentViewHolder(
+    inner class ProductHeaderViewHolder(
         private val binding: ComponentProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bindData(adapter: ProductAdapter) {
-            binding.recyclerViewGoodDeal.layoutManager = GridLayoutManager(binding.root.context, 2)
-            binding.recyclerViewGoodDeal.adapter = adapter
-        }
+        fun bindData() = Unit
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductComponentViewHolder {
-        return ProductComponentViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHeaderViewHolder {
+        return ProductHeaderViewHolder(
             ComponentProductBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -29,9 +30,17 @@ class ProductComponentAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ProductComponentViewHolder, position: Int) {
-        holder.bindData(adapter)
+    override fun onBindViewHolder(holder: ProductHeaderViewHolder, position: Int) {
+        holder.bindData()
     }
 
     override fun getItemCount() = 1
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
+    }
+
+    override fun spanSizeByType(globalItemViewType: Int): Int {
+        return totalSpanSize
+    }
 }
