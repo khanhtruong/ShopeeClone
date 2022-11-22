@@ -70,6 +70,20 @@ dependencies {
 
     // Roboletric
     testImplementation 'org.robolectric:robolectric:4.8'
+
+    // Hilt-Test
+    // For instrumentation tests
+    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.44.2'
+    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.44.2'
+
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.44.2'
+    kaptTest 'com.google.dagger:hilt-compiler:2.44.2'
+
+    // Kotlin-test
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.6.10"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "androidx.test:core-ktx:1.5.0"
     /** End session **/
 
     // Retrofit
@@ -123,4 +137,8 @@ dependencies {
 
     implementation "androidx.paging:paging-runtime:$paging_version"
     testImplementation "androidx.paging:paging-common:$paging_version"
+}
+
+kapt {
+    correctErrorTypes true
 }

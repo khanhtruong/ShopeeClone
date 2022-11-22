@@ -4,8 +4,8 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class ProductAPIProvider
+annotation class DefaultProductRepoProvider
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class MockProductAPIProvider
+annotation class MockProductRepoProvider

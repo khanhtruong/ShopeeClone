@@ -9,7 +9,7 @@ This repo also does not aim for 100% app coverage, although it should have:
     - [x] Scaffolding of all components on the listing page
     - [x] Toolbar transparency mechanic
         - Note: Whenever you scroll down, the toolbar background and buttons should change their appearance
-    - [ ] Pagination for infinite loading data
+    - [x] Pagination for infinite loading data
     - [ ] (Optional) Caching scroll position
     - [ ] (Optional) Skeleton loading
 - [ ] Details page
@@ -17,4 +17,7 @@ This repo also does not aim for 100% app coverage, although it should have:
 
 ### Test coverage
 
-`0%`
+Total test coverage:
+- Clas: `5%`
+- Method: `3%`
+- Line: `6%`

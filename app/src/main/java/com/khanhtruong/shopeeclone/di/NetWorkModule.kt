@@ -100,6 +100,6 @@ class NetWorkModule {
 
     companion object {
         const val TIMEOUT_TIME_IN_SECONDS = 10L
-        const val API_BASE_PATH = "https://api.github.com/"
+        const val API_BASE_PATH = "https://example.com/"
     }
 }
