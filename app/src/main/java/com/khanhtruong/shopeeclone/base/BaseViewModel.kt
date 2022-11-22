@@ -2,7 +2,7 @@ package com.khanhtruong.shopeeclone.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.khanhtruong.shopeeclone.data.AppError
+import com.khanhtruong.shopeeclone.data.ErrorType
 import com.khanhtruong.shopeeclone.data.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 open class BaseViewModel @Inject constructor(private val screenState: ScreenState) : ViewModel() {
-    fun emitError(error: AppError) {
+    fun emitError(error: ErrorType) {
         viewModelScope.launch {
             screenState.emitError(error)
         }
@@ -27,7 +27,7 @@ open class BaseViewModel @Inject constructor(private val screenState: ScreenStat
 fun <T> BaseViewModel.launchAPI(
     flow: Flow<Resource<T>>,
     onSuccess: (data: T) -> Unit,
-    onFailure: ((error: AppError) -> Unit)? = null,
+    onFailure: ((error: ErrorType) -> Unit)? = null,
     showLoading: Boolean = true,
 ) {
     viewModelScope.launch {
@@ -40,9 +40,9 @@ fun <T> BaseViewModel.launchAPI(
                 }
                 is Resource.Failure -> {
                     if (onFailure == null) {
-                        emitError(it.appError)
+                        emitError(it.error)
                     } else {
-                        onFailure.invoke(it.appError)
+                        onFailure.invoke(it.error)
                     }
                 }
             }

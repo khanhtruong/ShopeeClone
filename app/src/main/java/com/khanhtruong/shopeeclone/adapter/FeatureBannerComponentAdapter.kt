@@ -6,10 +6,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.khanhtruong.shopeeclone.data.model.BannerData
 import com.khanhtruong.shopeeclone.databinding.ItemFeatureBannerBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 class FeatureBannerComponentAdapter(
+    override val concatAdapterIndex: Int,
+    private val totalSpanSize: Int,
     private val adapter: FeatureBannerAdapter,
-) : RecyclerView.Adapter<FeatureBannerComponentAdapter.FeatureBannerComponentViewHolder>() {
+) : RecyclerView.Adapter<FeatureBannerComponentAdapter.FeatureBannerComponentViewHolder>(),
+    ConcatenableAdapter {
 
     inner class FeatureBannerComponentViewHolder(private val binding: ItemFeatureBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -37,4 +41,12 @@ class FeatureBannerComponentAdapter(
     }
 
     override fun getItemCount() = 1
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
+    }
+
+    override fun spanSizeByType(globalItemViewType: Int): Int {
+        return totalSpanSize
+    }
 }

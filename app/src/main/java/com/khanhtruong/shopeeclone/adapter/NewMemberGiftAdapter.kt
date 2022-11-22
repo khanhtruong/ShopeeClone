@@ -5,10 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.khanhtruong.shopeeclone.databinding.ItemNewMemberGiftBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 class NewMemberGiftAdapter(
-    private val adapter: FirstDealAdapter
-) : RecyclerView.Adapter<NewMemberGiftAdapter.NewMemberGiftViewHolder>() {
+    override val concatAdapterIndex: Int,
+    private val totalSpanSize: Int,
+    private val adapter: FirstDealAdapter,
+) : RecyclerView.Adapter<NewMemberGiftAdapter.NewMemberGiftViewHolder>(), ConcatenableAdapter {
 
     inner class NewMemberGiftViewHolder(private val binding: ItemNewMemberGiftBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -34,4 +37,12 @@ class NewMemberGiftAdapter(
     }
 
     override fun getItemCount() = 1
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
+    }
+
+    override fun spanSizeByType(globalItemViewType: Int): Int {
+        return totalSpanSize
+    }
 }

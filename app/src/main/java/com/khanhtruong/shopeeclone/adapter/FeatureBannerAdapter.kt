@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.khanhtruong.shopeeclone.data.model.BannerData
 import com.khanhtruong.shopeeclone.databinding.ItemImageViewBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 class FeatureBannerAdapter(
-    private val onClick: (BannerData) -> Unit
+    private val onClick: (BannerData) -> Unit,
 ) : ListAdapter<BannerData, FeatureBannerAdapter.FeatureBannerViewHolder>(BannerData.BannerDataDiffCallback()) {
 
     inner class FeatureBannerViewHolder(private val binding: ItemImageViewBinding) :

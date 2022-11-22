@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.khanhtruong.shopeeclone.data.model.FirstDealData
 import com.khanhtruong.shopeeclone.databinding.ItemFirstDealBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 class FirstDealAdapter(
     private val onClick: (FirstDealData) -> Unit

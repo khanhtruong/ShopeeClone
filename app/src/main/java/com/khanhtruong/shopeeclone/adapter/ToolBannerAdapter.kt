@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.khanhtruong.shopeeclone.databinding.ItemToolBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 interface ToolBannerInteraction {
     fun firstFeature()
@@ -13,8 +14,11 @@ interface ToolBannerInteraction {
     fun more()
 }
 
-class ToolBannerAdapter(private val listener: ToolBannerInteraction) :
-    RecyclerView.Adapter<ToolBannerAdapter.ToolBannerViewHolder>() {
+class ToolBannerAdapter(
+    override val concatAdapterIndex: Int,
+    private val totalSpanSize: Int,
+    private val listener: ToolBannerInteraction,
+) : RecyclerView.Adapter<ToolBannerAdapter.ToolBannerViewHolder>(), ConcatenableAdapter {
 
     inner class ToolBannerViewHolder(private val binding: ItemToolBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -56,4 +60,12 @@ class ToolBannerAdapter(private val listener: ToolBannerInteraction) :
     }
 
     override fun getItemCount() = 1
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
+    }
+
+    override fun spanSizeByType(globalItemViewType: Int): Int {
+        return totalSpanSize
+    }
 }

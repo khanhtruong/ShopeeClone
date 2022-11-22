@@ -2,15 +2,20 @@ package com.khanhtruong.shopeeclone.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.khanhtruong.shopeeclone.R
 import com.khanhtruong.shopeeclone.data.model.ProductData
 import com.khanhtruong.shopeeclone.databinding.ItemProductBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 class ProductAdapter(
-    private val onClick: (ProductData) -> Unit
-) : ListAdapter<ProductData, ProductAdapter.ProductViewHolder>(ProductData.ProductDiffCallBack()) {
+    override val concatAdapterIndex: Int,
+    private val onClick: (ProductData) -> Unit,
+) : PagingDataAdapter<ProductData, ProductAdapter.ProductViewHolder>(ProductData.ProductDiffCallBack()), ConcatenableAdapter {
 
     inner class ProductViewHolder(private val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -41,6 +46,12 @@ class ProductAdapter(
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bindData(currentList[position], onClick)
+        getItem(position)?.let { data ->
+            holder.bindData(data, onClick)
+        }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
     }
 }

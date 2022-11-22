@@ -1,16 +1,16 @@
 package com.khanhtruong.shopeeclone.base
 
-import com.khanhtruong.shopeeclone.data.AppError
+import com.khanhtruong.shopeeclone.data.ErrorType
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
 class ScreenState {
-    private val _errorsFlow = MutableSharedFlow<AppError>()
+    private val _errorsFlow = MutableSharedFlow<ErrorType>()
     private val _loadingFlow = MutableSharedFlow<Boolean>()
     val errorsFlow = _errorsFlow.asSharedFlow()
     val loadingFlow = _loadingFlow.asSharedFlow()
 
-    suspend fun emitError(error: AppError) {
+    suspend fun emitError(error: ErrorType) {
         _errorsFlow.emit(error)
     }
 

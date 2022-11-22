@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.khanhtruong.shopeeclone.databinding.ItemWalletBannerBinding
+import com.khanhtruong.shopeeclone.util.ConcatenableAdapter
 
 interface WalletBannerInteraction {
     fun openQRScanner()
@@ -12,8 +13,10 @@ interface WalletBannerInteraction {
 }
 
 class WalletBannerAdapter(
-    private val interaction: WalletBannerInteraction
-) : RecyclerView.Adapter<WalletBannerAdapter.WalletBannerViewHolder>() {
+    override val concatAdapterIndex: Int,
+    private val totalSpanSize: Int,
+    private val interaction: WalletBannerInteraction,
+) : RecyclerView.Adapter<WalletBannerAdapter.WalletBannerViewHolder>(), ConcatenableAdapter {
 
     inner class WalletBannerViewHolder(private val binding: ItemWalletBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -45,4 +48,12 @@ class WalletBannerAdapter(
     }
 
     override fun getItemCount() = 1
+
+    override fun getItemViewType(position: Int): Int {
+        return globalViewItemType()
+    }
+
+    override fun spanSizeByType(globalItemViewType: Int): Int {
+        return totalSpanSize
+    }
 }
