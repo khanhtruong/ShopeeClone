@@ -18,6 +18,6 @@ This repo also does not aim for 100% app coverage, although it should have:
 ### Test coverage
 
 Total test coverage:
-- Clas: `5%`
+- Class: `5%`
 - Method: `3%`
 - Line: `6%`

@@ -23,8 +23,6 @@ q
 Aapp/src/main/java/com/khanhtruong/shopeeclone/base/ScreenState.kt,a/6/a6edeb49fb4d5736b9a58b9886c688d57021a06b
 ˆ
 Xapp/src/main/java/com/khanhtruong/shopeeclone/di/qualifier/OkhttpInterceptorQualifier.kt,3/3/33e15ff4f6af567ab61b3d3097df4fc5cc27939c
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 p
 @app/src/main/java/com/khanhtruong/shopeeclone/MainApplication.kt,0/3/039c7c22d3fde5dc2763e580c5b7c6ec92d9a462
 m
